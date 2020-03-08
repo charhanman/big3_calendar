@@ -1,10 +1,14 @@
-<div class="center janbotron">
-  <h1>Welcom to the Big3 Calendar</h1>
-
-  <h2>
-    Big3 カレンダーのホームページです。登録して、筋トレの記録を残しましょう。
-  </h2>
-
-  <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
-</div>
+<% if logged_in? %>
+  <div class="container">
+    
+  </div>
+<% else %>
+  <div class="center janbotron">
+    <h1>Welcom to the Big3 Calendar</h1>
+    <h2>
+      Big3 カレンダーのホームページです。登録して、筋トレの記録を残しましょう。
+    </h2>
+    <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+  </div>
+<% end %>
 

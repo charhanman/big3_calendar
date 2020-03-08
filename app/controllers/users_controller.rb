@@ -12,14 +12,15 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find_by(params[:id])
+    @user = User.find(params[:id])
+    @results = @user.results.paginate(page: params[:page])
   end
 
   def create
     @user = User.new(user_params)
     if @user.save
       log_in @user
-      flash[:success] = "Welcome to the Sample App!"
+      flash[:success] = "Welcome to the Big3 Calendar!"
       redirect_to @user
     else
       render 'new'
@@ -51,15 +52,6 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:name, :email, :password, 
                        :password_confirmation)
-    end
-
-    #ログイン済みユーザーか確認する
-    def logged_in_user
-      unless logged_in?
-        store_location
-        flash[:danger] = "Please log in"
-        redirect_to login_url
-      end
     end
 
     #正しいユーザーか確認

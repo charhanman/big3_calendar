@@ -1,0 +1,12 @@
+<li id="result-<%= result.id %>">
+  <span class="date"><%= result.training_at %></span>
+  <span class="content">
+    Bench <%= result.bench_press %> 
+    Deadlift <%= result.deadlift %>
+    squat <%= result.squat %>
+  </span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(result.created_at) %> ago.
+  </span>
+  <div class="text-right"><%= link_to "編集", edit_result_path %></div>
+</li>

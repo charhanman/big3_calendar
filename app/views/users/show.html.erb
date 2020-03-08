@@ -1,12 +1,16 @@
 <% provide(:title, @user.name) %>
 
 <div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name%>
-      </h1>
-    </section>
+  <aside class="col-md-8 text-center">
+    <h5><%= link_to "新しく記録を作成する", new_result_path %></h3>
+    <% if @user.results.any? %>
+      <h3>記録 (<%= @user.results.count %>)</h3>
+      <ol class="results">
+        <%= render @results %>
+      </ol>
+      <%= will_paginate @results %>
+    <% end %>
+    <h5><%= link_to "新しく記録を作成する", new_result_path %></h3>
   </aside>
 </div>
+

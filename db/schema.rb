@@ -10,7 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_02_114707) do
+ActiveRecord::Schema.define(version: 2020_03_04_100632) do
+
+  create_table "big3s", force: :cascade do |t|
+    t.boolean "bench_press"
+    t.boolean "deadlift"
+    t.boolean "squat"
+    t.datetime "training_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "details", force: :cascade do |t|
+    t.integer "plan_rep"
+    t.integer "plan_times"
+    t.integer "weight"
+    t.integer "result_rep"
+    t.integer "result_times"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "results", force: :cascade do |t|
+    t.integer "bench_press"
+    t.integer "deadlift"
+    t.integer "squat"
+    t.datetime "training_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_results_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"

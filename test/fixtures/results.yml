@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bench_press: 1
+  deadlift: 1
+  squat: 1
+  training_at: 2020-03-04 18:40:31
+
+two:
+  bench_press: 1
+  deadlift: 1
+  squat: 1
+  training_at: 2020-03-04 18:40:31
