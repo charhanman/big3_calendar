@@ -38,4 +38,8 @@ class User < ApplicationRecord
   def forget
     update_attribute(:remember_digest, nil)
   end
+
+  def feed
+    Result.where("user_id = ?",id)
+  end
 end

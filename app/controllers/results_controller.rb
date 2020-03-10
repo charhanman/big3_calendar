@@ -36,7 +36,7 @@ class ResultsController < ApplicationController
   private
 
     def result_params
-      params.require(:result).permit(:training_at, :bench_press,
+      params.require(:result).permit(:start_time, :bench_press,
                                      :deadlift, :squat)
     end
 

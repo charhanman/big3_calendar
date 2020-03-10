@@ -1,7 +1,19 @@
+<h1>BIG3 CALENDAR</h1>
 <% if logged_in? %>
-  <div class="container">
-    
-  </div>
+  <%= month_calendar events: @results do |date, results| %>
+    <%= date %>
+  
+    <% results.each do |result| %>
+      <div>
+        bench_press
+        <%= result.bench_press %><br/>
+        deadlift
+        <%= result.deadlift %><br/>
+        squat
+        <%= result.squat %><br/>
+      </div>
+    <% end %>
+  <% end %>
 <% else %>
   <div class="center janbotron">
     <h1>Welcom to the Big3 Calendar</h1>

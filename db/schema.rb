@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_04_100632) do
+ActiveRecord::Schema.define(version: 2020_03_08_051512) do
 
   create_table "big3s", force: :cascade do |t|
     t.boolean "bench_press"
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2020_03_04_100632) do
     t.integer "bench_press"
     t.integer "deadlift"
     t.integer "squat"
-    t.datetime "training_at"
+    t.datetime "start_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"

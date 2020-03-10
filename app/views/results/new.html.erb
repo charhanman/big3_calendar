@@ -6,8 +6,8 @@
     <%= form_for(@result, url:results_path) do |f| %>
       <%# <%= render 'shared/error_messages' %> 
 
-      <%= f.label :training_at %>
-      <%= f.datetime_field :training_at, class: "form-control" %>
+      <%= f.label :start_time %>
+      <%= f.datetime_select :start_time %>
 
       <%= f.label :bench_press %>
       <%= f.number_field :bench_press, class: "form-control" %>
